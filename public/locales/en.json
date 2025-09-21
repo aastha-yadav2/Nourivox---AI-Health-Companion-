@@ -1,0 +1,164 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "doctors": "Doctors",
+    "vaccines": "Vaccines",
+    "pharmacy": "Pharmacy",
+    "schemes": "Schemes",
+    "login": "Login",
+    "signup": "Sign Up",
+    "dashboard": "Dashboard",
+    "logout": "Log out",
+    "back": "Back",
+    "forward": "Forward",
+    "governmentSchemes": "Government Schemes"
+  },
+  "hero": {
+    "title": "Nourivox - Your Health Companion",
+    "subtitle": "A voice that nurtures your health with intelligent AI conversations about your wellbeing",
+    "startChat": "Start Your Health Journey",
+    "learnMore": "Learn More",
+    "trustedBy": "Trusted by thousands worldwide",
+    "available247": "Available",
+    "hipaaCompliant": "HIPAA Compliant",
+    "aiDoctors": "AI+ Real Doctors"
+  },
+  "features": {
+    "title": "Why Choose HealthChat AI?",
+    "subtitle": "Advanced AI technology meets human expertise for comprehensive healthcare support",
+    "aiChat": {
+      "title": "Smart AI Chat",
+      "description": "Get instant responses to your health questions with our advanced AI trained on medical knowledge"
+    },
+    "doctorConnect": {
+      "title": "Doctor Connect",
+      "description": "Connect with licensed physicians for professional medical consultations when you need expert care"
+    },
+    "personalizedCare": {
+      "title": "Personalized Care",
+      "description": "Receive tailored health recommendations based on your medical history and current symptoms"
+    },
+    "securePrivate": {
+      "title": "Secure & Private",
+      "description": "Your health data is protected with enterprise-grade security and HIPAA compliance"
+    }
+  },
+  "about": {
+    "title": "Revolutionizing Healthcare with AI",
+    "subtitle": "Making quality healthcare accessible to everyone, everywhere",
+    "description": "HealthChat AI combines cutting-edge artificial intelligence with human medical expertise to provide instant, reliable healthcare guidance. Our platform bridges the gap between patients and healthcare providers, offering immediate support for health concerns while ensuring access to licensed professionals when needed.",
+    "aiTechnology": {
+      "title": "Advanced AI Technology",
+      "description": "Our AI is trained on vast medical databases and continuously updated with the latest healthcare knowledge"
+    },
+    "expertDoctors": {
+      "title": "Expert Medical Team",
+      "description": "Licensed physicians and specialists available for consultations and complex medical questions"
+    },
+    "patientFirst": {
+      "title": "Patient-First Approach",
+      "description": "Every interaction is designed with patient safety, privacy, and satisfaction as our top priorities"
+    }
+  },
+  "doctors": {
+    "title": "Consult with Expert Doctors",
+    "subtitle": "Connect with licensed healthcare professionals for personalized medical guidance",
+    "searchPlaceholder": "Search doctors...",
+    "allSpecialties": "All Specialties",
+    "viewProfile": "View Profile",
+    "bookAppointment": "Book Appointment",
+    "call": "Call",
+    "specialtyFilter": "Specialty Filter"
+  },
+  "pharmacy": {
+    "title": "Online Pharmacy",
+    "subtitle": "Order medicines and healthcare products with home delivery",
+    "searchPlaceholder": "Search medicines...",
+    "allCategories": "All Categories",
+    "addToCart": "Add to Cart",
+    "buyNow": "Buy Now",
+    "outOfStock": "Out of Stock",
+    "prescription": "Prescription Required",
+    "otc": "Over-the-Counter"
+  },
+  "dashboard": {
+    "title": "Your Health Dashboard",
+    "quickActions": "Quick Actions",
+    "bookAppointment": "Book Appointment",
+    "orderMedicine": "Order Medicine",
+    "viewReports": "View Reports",
+    "chatWithAI": "Chat with AI",
+    "healthStats": "Health Stats",
+    "appointments": "Upcoming Appointments",
+    "healthRecords": "Health Records",
+    "reminders": "Reminders"
+  },
+  "governmentSchemes": {
+    "title": "Government Schemes",
+    "pregnantWomen": "Pregnant Women",
+    "newbornBabies": "Newborn Babies",
+    "showAll": "Show All Schemes",
+    "showLess": "Show Top 3",
+    "bookmark": "Bookmark",
+    "setReminder": "Set Reminder",
+    "callHelpline": "Call Local Helpline",
+    "moreInfo": "More Info",
+    "notes": "Notes",
+    "launch": "Launch",
+    "eligibility": "Eligibility",
+    "benefits": "Benefits",
+    "documents": "Documents Required",
+    "howToApply": "How to Apply",
+    "selectDate": "Select reminder date",
+    "alertBanner": "For state-specific benefits, please select your state. Contact your PHC/ASHA/Anganwadi for help registering."
+  },
+  "vaccines": {
+    "title": "Vaccination Schedule",
+    "subtitle": "Complete vaccination schedule for babies and children according to Indian guidelines",
+    "importantNotice": "Important Notice",
+    "noticeText": "Always consult with your pediatrician before vaccinations. This schedule follows Indian Academy of Pediatrics guidelines. Visit your nearest government health center for free vaccinations under UIP.",
+    "callHelpline": "Call National Health Helpline: 104",
+    "ageWiseSchedule": "Age-wise Schedule",
+    "vaccinationCenters": "Vaccination Centers",
+    "vaccinationTracker": "Vaccination Tracker",
+    "vaccinesRequired": "vaccines required",
+    "required": "Required",
+    "setReminder": "Set Reminder",
+    "reminderSet": "Reminder Set",
+    "trackProgress": "Track your child's vaccination progress",
+    "vaccines": "vaccines",
+    "pending": "Pending",
+    "markComplete": "Mark Complete",
+    "additionalResources": "Additional Resources",
+    "findCenters": "Find Vaccination Centers",
+    "locateNearby": "Locate nearby government health centers",
+    "downloadCard": "Download Vaccination Card",
+    "digitalRecord": "Digital vaccination record",
+    "centersInDehradun": "Vaccination Centers in Dehradun",
+    "findNearbyText": "Find nearby vaccination centers with contact details and locations",
+    "verified": "Verified",
+    "viewOnMap": "View on Map",
+    "bookAppointment": "Book Appointment",
+    "needHelp": "Need Help Finding Centers?",
+    "helplineText": "Call the National Immunization Helpline for assistance",
+    "callFreeHelpline": "Call 104 - Free Helpline"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "language": "Language"
+  }
+}
