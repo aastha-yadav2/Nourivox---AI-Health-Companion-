@@ -1,38 +1,36 @@
+// Login.jsx
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardDescription, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Separator } from '@/components/ui/separator';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Loader2, Mail } from 'lucide-react';
 
 const Login = () => {
-  const { signIn, signInWithGoogle, loading } = useAuth();
+  const { login, signInWithGoogle, loading } = useAuth();
   const navigate = useNavigate();
 
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
   const [formData, setFormData] = useState({ email: '', password: '' });
+  const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const getFriendlyAuthError = (error) => {
-    if (!error) return 'Failed to sign in. Please try again.';
+    if (!error) return 'Failed to login. Please try again.';
     if (error?.message?.includes('Invalid login credentials')) return 'Invalid email or password.';
     if (error?.message?.includes('Email not confirmed')) return 'Check your email for confirmation link.';
-    if (error?.message?.includes('Too many requests')) return 'Too many login attempts. Try again later.';
     return error.message;
   };
 
   // Google OAuth login
-  const handleGoogleSignIn = async () => {
+  const handleGoogleLogin = async () => {
     try {
       setIsLoading(true);
       setError('');
       await signInWithGoogle();
-      // Navigate to dashboard after login
-      navigate('/dashboard');
+      navigate('/dashboard'); // direct to dashboard
     } catch (err) {
       setError(getFriendlyAuthError(err));
     } finally {
@@ -46,8 +44,8 @@ const Login = () => {
     try {
       setIsLoading(true);
       setError('');
-      await signIn(formData.email, formData.password);
-      navigate('/dashboard');
+      await login(formData.email, formData.password);
+      navigate('/dashboard'); // direct to dashboard
     } catch (err) {
       setError(getFriendlyAuthError(err));
     } finally {
@@ -56,21 +54,22 @@ const Login = () => {
   };
 
   const handleInputChange = (e) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 bg-gray-50">
       <Card className="w-full max-w-md">
-        <CardHeader className="text-center space-y-4">
+        <CardHeader className="text-center space-y-2 bg-white">
           <div className="w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center mx-auto">
             <span className="text-white font-bold text-2xl">H</span>
           </div>
-          <CardTitle className="text-2xl font-bold">Welcome Back</CardTitle>
-          <CardDescription className="text-gray-600">Sign in to your Healthcare Assistant account</CardDescription>
+          <CardTitle className="text-2xl font-bold">Sign In</CardTitle>
+          <CardDescription className="text-gray-600">Welcome back! Please login</CardDescription>
         </CardHeader>
 
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-4">
           {error && (
             <Alert variant="destructive">
               <AlertDescription>{error}</AlertDescription>
@@ -78,7 +77,7 @@ const Login = () => {
           )}
 
           <Button
-            onClick={handleGoogleSignIn}
+            onClick={handleGoogleLogin}
             disabled={isLoading || loading}
             className="w-full flex items-center justify-center gap-2 border border-gray-300 bg-white hover:bg-gray-50 text-gray-900"
           >
@@ -88,55 +87,25 @@ const Login = () => {
 
           <div className="relative my-4">
             <div className="absolute inset-0 flex items-center">
-              <Separator className="w-full" />
+              <div className="w-full border-t border-gray-200"></div>
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-gray-50 px-2 text-gray-500">Or continue with email</span>
+              <span className="bg-gray-50 px-2 text-gray-500">Or sign in manually</span>
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="Enter your email"
-                value={formData.email}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
-              <Input
-                id="password"
-                name="password"
-                type="password"
-                placeholder="Enter your password"
-                value={formData.password}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-
+          <form onSubmit={handleSubmit} className="space-y-3">
+            <Label>Email</Label>
+            <Input name="email" type="email" value={formData.email} onChange={handleInputChange} required />
+            <Label>Password</Label>
+            <Input name="password" type="password" value={formData.password} onChange={handleInputChange} required />
             <Button type="submit" className="w-full" disabled={isLoading}>
               {isLoading ? 'Signing In...' : 'Sign In'}
             </Button>
           </form>
 
-          <div className="text-center space-y-2 text-sm text-gray-500">
-            <Link to="/forgot-password" className="text-blue-500 hover:underline">
-              Forgot your password?
-            </Link>
-            <div>
-              Don't have an account?{' '}
-              <Link to="/signup" className="text-blue-500 hover:underline font-medium">
-                Sign up
-              </Link>
-            </div>
+          <div className="text-center text-sm text-gray-500">
+            Don't have an account? <Link to="/signup" className="text-blue-500 hover:underline">Sign up</Link>
           </div>
         </CardContent>
       </Card>
