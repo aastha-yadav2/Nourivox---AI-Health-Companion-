@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardDescription, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
@@ -17,7 +17,6 @@ const Signup = () => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
   const [activeTab, setActiveTab] = useState('patient');
 
   const [formData, setFormData] = useState({
@@ -41,8 +40,7 @@ const Signup = () => {
       setIsLoading(true);
       setError('');
       await signInWithGoogle();
-      setSuccessMessage('Account created successfully!');
-      setTimeout(() => navigate('/'), 1500);
+      navigate('/dashboard'); // direct navigation
     } catch (err) {
       setError(getFriendlyAuthError(err));
     } finally {
@@ -84,8 +82,8 @@ const Signup = () => {
         });
       }
 
-      setSuccessMessage('Account created successfully! Please check your email.');
-      setTimeout(() => navigate('/login'), 2000);
+      // Directly navigate to dashboard
+      navigate('/dashboard');
     } catch (err) {
       setError(getFriendlyAuthError(err));
     } finally {
@@ -122,11 +120,6 @@ const Signup = () => {
         </CardHeader>
 
         <CardContent className="space-y-4">
-          {successMessage && (
-            <Alert className="border-green-200 bg-green-50">
-              <AlertDescription className="text-green-800">{successMessage}</AlertDescription>
-            </Alert>
-          )}
           {error && (
             <Alert variant="destructive">
               <AlertDescription>{error}</AlertDescription>
